@@ -304,10 +304,10 @@ def calc_G(J_r, J_phi, l, m, Delta_J=1):
     
     L = abs(J_phi)
     
-    Omega_r = calc_Omega_r(J_r, L)
-    dOmegar_dJr = -3 * Omega_r / (J_r + 0.5*(L + np.sqrt(L**2 + 4*GM*b)))
-
     alpha = 0.5*(1 + L/np.sqrt(L**2 + 4*GM*b))
+    
+    Omega_r = calc_Omega_r(J_r, L)
+    dOmegar_dJr = -3 * Omega_r / (J_r + alpha/(2*alpha-1) * L)
 
     G = dOmegar_dJr * (l + m*alpha*np.sign(J_phi))**2 + 2 * m**2 * alpha*(1-alpha)*(2*alpha-1) * Omega_r/L
     

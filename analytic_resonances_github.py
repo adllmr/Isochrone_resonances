@@ -213,7 +213,7 @@ def calc_res_orbit(L, J_phi, l, m, phi_peri=0, N_orbits=2, gridsize=10001):
         # Calculate theta and phi
         theta_phi = Omega_phi/Omega_r * theta_r + phi_peri
         
-        phi_shift = 0.5*np.pi*(eta_over_pi - eta_over_pi % 4)*(1 + 1/np.sqrt(1 + 4*GM*b/L**2))
+        phi_shift = 0.5*np.pi*(eta_over_pi - eta_over_pi % 4)*(1 + 1/np.sqrt(1 + 4*GM*b/L**2))*np.sign(J_phi)
         
         phi = theta_phi - Omega_phi/Omega_r * theta_r + np.sign(J_phi) * (np.arctan2(np.sqrt((1+e)/(1-e)) * np.sin(eta/2), np.cos(eta/2))%(2*np.pi) + 1/np.sqrt(1 + 4*GM*b/L**2) * (np.arctan2(np.sqrt((1+e+2*b/c)/(1-e+2*b/c)) * np.sin(eta/2), np.cos(eta/2))%(2*np.pi))) + phi_shift
 

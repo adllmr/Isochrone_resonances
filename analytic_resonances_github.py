@@ -4,7 +4,6 @@ import astropy.units as u
 from astropy.constants import G
 from matplotlib import patches
 import matplotlib.colors as mcolors
-import agama
 import fractions
 
 #%%
@@ -12,8 +11,6 @@ import fractions
 plt.rcParams['text.usetex'] = True
 plt.rcParams['mathtext.fontset'] = 'stix'
 plt.rcParams['font.family'] = 'STIXGeneral'
-
-agama.setUnits(length=1, velocity=1, mass=1)
 
 #%%
 
